@@ -60,7 +60,7 @@ Used by `SileroPunctuator` via LibTorch 2.1.0. 512 max tokens; 200-word chunking
 
 ### v1.0 — Silero v5 CIS Base TTS
 
-On-device neural TTS for 20 languages and 44 speaker voices.  
+On-device neural TTS for 20 languages and 60+ speaker voices.  
 Architecture: Silero v5 CIS base, surgically optimised for mobile (TorchScript `.ptl`).  
 Output: 48 kHz mono PCM float32 audio.
 
@@ -70,7 +70,7 @@ Used by `SileroTTSEngine` via LibTorch ObjC++ `TorchModule` bridge.
 |------|------|---------|
 | `silero_surgery.ptl` | 81 MB | `68eb40cc7553c648ee64675e7f402808c568b3cc10a4023e92e9fd7a5a4ffca4` |
 
-**Supported languages:** Russian (10 voices) · Ukrainian (2) · Belarusian (3) · Kazakh (2) · Uzbek · Azerbaijani · Turkish · Armenian · Georgian (2) · Kyrgyz · Tajik (2) · Bashkir (5) · Tatar (2) · Kabardian · Sakha · Khakas (2) · Kalmyk (2) · Chuvash · Udmurt · Erzya · Moksha  
+**Supported languages:** Russian (29 voices) · Ukrainian (2) · Belarusian (3) · Kazakh (2) · Uzbek · Azerbaijani · Turkish · Armenian · Georgian (2) · Kyrgyz · Tajik (2) · Bashkir (5) · Tatar (2) · Kabardian · Sakha · Khakas (2) · Kalmyk (2) · Chuvash · Udmurt · Erzya · Moksha  
 Latin-script languages (English, German, Spanish) are supported via Cyrillic transliteration.
 
 ---
