@@ -75,16 +75,6 @@ Latin-script languages (English, German, Spanish, Turkish, Estonian, Latvian, Li
 
 ---
 
-### v1.0 — Silero v5 CIS Base TTS (legacy, deprecated)
-
-Replaced by v1.1. This was a surgically-modified `.ptl` variant for LibTorch Lite; no longer needed.
-
-| File | Size | SHA-256 |
-|------|------|---------|
-| `silero_surgery.ptl` | 81 MB | `68eb40cc7553c648ee64675e7f402808c568b3cc10a4023e92e9fd7a5a4ffca4` |
-
----
-
 ## License
 
 **RuStress CoreML models** (`accentor_encoder.mlpackage`, `accentor_decoder.mlpackage`) — Copyright © 2024 Sayfable. MIT License.  
