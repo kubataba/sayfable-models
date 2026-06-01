@@ -10,7 +10,7 @@ All models originate from PyTorch. Two porting paths were used:
 
 | Path | Pipeline | Models |
 |------|----------|--------|
-| **TorchScript → LibTorch** | `torch.jit.script()` → `.pt` / `optimize_for_mobile()` → `.ptl` → ObjC++ `TorchModule` bridge | Silero TTS, Silero Punctuation, AccentorEngine (×3) |
+| **TorchScript → LibTorch** | `torch.jit.script()` → `.jit` → ObjC++ `TorchModule` bridge | Silero TTS, Silero Punctuation, AccentorEngine (×3) |
 | **CoreML** | `coremltools.convert()` → `.mlpackage` → Xcode compiles to `.mlmodelc` | RuStress encoder + decoder |
 
 Export scripts for AccentorEngine: [`export_accentor.py`](https://github.com/snakers4/silero-models) from the original Silero repo.  
@@ -58,20 +58,30 @@ Used by `SileroPunctuator` via LibTorch 2.1.0. 512 max tokens; 200-word chunking
 
 ---
 
-### v1.0 — Silero v5 CIS Base TTS
+### v1.1 — Silero v5 CIS Base TTS
 
-On-device neural TTS for 20 languages and 60+ speaker voices.  
-Architecture: Silero v5 CIS base, surgically optimised for mobile (TorchScript `.ptl`).  
+On-device neural TTS for 20+ languages and 60+ speaker voices.  
+Architecture: Original Silero v5 CIS base model. Loaded directly via `torch::jit::load` — no modifications needed with full LibTorch.  
 Output: 48 kHz mono PCM float32 audio.
 
-Used by `SileroTTSEngine` via LibTorch ObjC++ `TorchModule` bridge.
+Used by `SileroTTSEngine` via LibTorch 2.1.0 ObjC++ `TorchModule` bridge (`jitFileAtPath:`).
+
+| File | Size | SHA-256 |
+|------|------|---------|
+| `v5_cis_base_nostress.jit` | 87 MB | `d7d361caf78b8480bcd65a0c367af665a2bf6f06c8507306e3781dc7c6ce781b` |
+
+**Supported languages:** Russian (29 voices) · Ukrainian (2) · Belarusian (3) · Kazakh (2) · Uzbek · Azerbaijani · Turkish · Armenian · Georgian (2) · Kyrgyz · Tajik (2) · Bashkir (5) · Tatar (2) · Kabardian · Sakha · Khakas (2) · Kalmyk (2) · Chuvash · Udmurt · Erzya · Moksha  
+Latin-script languages (English, German, Spanish, Turkish, Estonian, Latvian, Lithuanian) are supported via Cyrillic transliteration.
+
+---
+
+### v1.0 — Silero v5 CIS Base TTS (legacy, deprecated)
+
+Replaced by v1.1. This was a surgically-modified `.ptl` variant for LibTorch Lite; no longer needed.
 
 | File | Size | SHA-256 |
 |------|------|---------|
 | `silero_surgery.ptl` | 81 MB | `68eb40cc7553c648ee64675e7f402808c568b3cc10a4023e92e9fd7a5a4ffca4` |
-
-**Supported languages:** Russian (29 voices) · Ukrainian (2) · Belarusian (3) · Kazakh (2) · Uzbek · Azerbaijani · Turkish · Armenian · Georgian (2) · Kyrgyz · Tajik (2) · Bashkir (5) · Tatar (2) · Kabardian · Sakha · Khakas (2) · Kalmyk (2) · Chuvash · Udmurt · Erzya · Moksha  
-Latin-script languages (English, German, Spanish, Turkish, Estonian, Latvian, Lithuanian) are supported via Cyrillic transliteration.
 
 ---
 
