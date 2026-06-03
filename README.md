@@ -10,7 +10,7 @@ All models originate from PyTorch. Two porting paths were used:
 
 | Path | Pipeline | Models |
 |------|----------|--------|
-| **TorchScript → LibTorch** | `torch.jit.script()` → `.jit` → ObjC++ `TorchModule` bridge | Silero TTS, Silero Punctuation, AccentorEngine (×3) |
+| **TorchScript → LibTorch** | `torch.jit.script()` → `.jit` / `torch.jit.trace()` → `.ptl` → ObjC++ `TorchModule` bridge | Silero TTS, Silero Punctuation, AccentorEngine (×3), Piper Latvian TTS |
 | **CoreML** | `coremltools.convert()` → `.mlpackage` → Xcode compiles to `.mlmodelc` | RuStress encoder + decoder |
 
 Export scripts for AccentorEngine: [`export_accentor.py`](https://github.com/snakers4/silero-models) from the original Silero repo.  
@@ -19,6 +19,30 @@ RuStress CoreML export: [`Russian-Stress-Accent-Predictor`](https://github.com/k
 ---
 
 ## Releases
+
+### v3.0 — Piper Latvian TTS (Aivars)
+
+Native Latvian neural TTS voice. No more Cyrillic transliteration — real Latvian synthesis.  
+Architecture: VITS (Variational Inference with adversarial learning for end-to-end Text-to-Speech).  
+Source: [rhasspy/piper](https://github.com/rhasspy/piper) — Piper v2.0.0 checkpoint, exported to TorchScript via `torch.jit.trace()`.  
+License: CC0 (public domain, per Piper's `lv_LV` voice pack).  
+Input: Phoneme IDs (rule-based Latvian phonemizer in Swift, no espeak-ng dependency).  
+Output: 22050 Hz mono PCM float32.
+
+Used by `PiperTTSEngine` via LibTorch 2.1.0 ObjC++ `TorchModule` bridge (`jitFileAtPath:`).
+
+| File | Size | SHA-256 |
+|------|------|---------|
+| `lv_LV-aivars-medium.ptl` | 91 MB | `dac75c8f9d3ab6612ea31fc90d94f60247f45e3da24504472dbf890ab28e4084` |
+
+**Swift / LibTorch usage:**
+```swift
+let model = TorchModule(jitFileAtPath: path)
+let output = model.forward([seqTensor, lenTensor, sidTensor, noiseScale, lengthScale, noiseW])
+// → [1, 1, N] Float32 tensor — audio samples at 22050 Hz
+```
+
+---
 
 ### v2.1 — Silero AccentorEngine stress models (RU, UKR, BEL)
 
