@@ -24,8 +24,9 @@ RuStress CoreML export: [`Russian-Stress-Accent-Predictor`](https://github.com/k
 
 Native Latvian neural TTS voice. No more Cyrillic transliteration — real Latvian synthesis.  
 Architecture: VITS (Variational Inference with adversarial learning for end-to-end Text-to-Speech).  
-Source: [rhasspy/piper](https://github.com/rhasspy/piper) — Piper v2.0.0 checkpoint, exported to TorchScript via `torch.jit.trace()`.  
-License: CC0 (public domain, per Piper's `lv_LV` voice pack).  
+Engine: [Piper TTS](https://github.com/OHF-Voice/piper1-gpl) — MIT License.  
+Voice model: [RaivisDejus/Piper-lv_LV-Aivars-medium](https://huggingface.co/RaivisDejus/Piper-lv_LV-Aivars-medium) — CC0 1.0 Universal (public domain).  
+Checkpoint exported to TorchScript via `torch.jit.trace()`.  
 Input: Phoneme IDs (rule-based Latvian phonemizer in Swift, no espeak-ng dependency).  
 Output: 22050 Hz mono PCM float32.
 
@@ -33,7 +34,7 @@ Used by `PiperTTSEngine` via LibTorch 2.1.0 ObjC++ `TorchModule` bridge (`jitFil
 
 | File | Size | SHA-256 |
 |------|------|---------|
-| `lv_LV-aivars-medium.ptl` | 91 MB | `dac75c8f9d3ab6612ea31fc90d94f60247f45e3da24504472dbf890ab28e4084` |
+| `lv_LV-aivars-medium.ptl` | 60 MB | `f4fcadd8fb1581556df21a8b741b3a833fbce745a8d41a2ac1b5ab840f048d76` |
 
 **Swift / LibTorch usage:**
 ```swift
@@ -104,7 +105,10 @@ Latin-script languages (English, German, Spanish, Turkish, Estonian, Latvian, Li
 **RuStress CoreML models** (`accentor_encoder.mlpackage`, `accentor_decoder.mlpackage`) — Copyright © 2024 Sayfable. MIT License.  
 Source: https://github.com/kubataba/Russian-Stress-Accent-Predictor
 
-**All other models** are derived from [Silero Models](https://github.com/snakers4/silero-models) by Silero Team, used under the **MIT License**.
+**Silero models** (TTS, punctuation, accentor) — derived from [Silero Models](https://github.com/snakers4/silero-models) by Silero Team, used under the **MIT License**.
+
+**Piper Aivars voice model** (`lv_LV-aivars-medium.ptl`) — [RaivisDejus/Piper-lv_LV-Aivars-medium](https://huggingface.co/RaivisDejus/Piper-lv_LV-Aivars-medium), **CC0 1.0 Universal** (public domain).  
+Piper TTS engine: [OHF-Voice/piper1-gpl](https://github.com/OHF-Voice/piper1-gpl) — **MIT License**.
 
 ```
 MIT License
@@ -127,3 +131,4 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 ```
 
 Original repository: https://github.com/snakers4/silero-models
+Piper TTS: https://github.com/OHF-Voice/piper1-gpl
