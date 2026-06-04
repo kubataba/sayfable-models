@@ -22,7 +22,7 @@ RuStress CoreML export: [`Russian-Stress-Accent-Predictor`](https://github.com/k
 
 ### v3.0 — Piper Latvian TTS (Aivars)
 
-Native Latvian neural TTS voice. No more Cyrillic transliteration — real Latvian synthesis.  
+Native Latvian neural TTS voice. Real Latvian synthesis.  
 Architecture: VITS (Variational Inference with adversarial learning for end-to-end Text-to-Speech).  
 Engine: [Piper TTS](https://github.com/OHF-Voice/piper1-gpl) — MIT License.  
 Voice model: [RaivisDejus/Piper-lv_LV-Aivars-medium](https://huggingface.co/RaivisDejus/Piper-lv_LV-Aivars-medium) — CC0 1.0 Universal (public domain).  
