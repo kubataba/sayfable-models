@@ -15,7 +15,7 @@ that contributed to that pack.
 | [Apertium](https://github.com/apertium) (`apertium-sah`, `apertium-chv`, `apertium-tat`, `apertium-tgk` `.lexc` lexicons) | **GPL-3.0** | sah / chv morph+names; tt and tg enrichment |
 | [GrammarDB](https://github.com/Belarus/GrammarDB) (bnkorpus.info) | CC BY-SA 4.0 | be morphology (forms/paradigms) |
 | [Sloleks 3.0](http://hdl.handle.net/11356/1745) (CLARIN.SI) | CC BY-SA 4.0 | sl morphology (365k entries, full paradigms) |
-| [khakas.altaica.ru](http://khakas.altaica.ru) (Khakas dictionary + glossed parallel corpus) | research resource, used with attribution | kjh morph/gloss |
+| «Хакасско-русский словарь» / под ред. О. В. Субраковой. — Новосибирск, 2006 | book edition (2006) | kjh morph/gloss |
 | «Русско-кабардинский словарь» / издание Управления Кавказского учебного округа; сост. Л. Лопатинский. — Тифлис, 1890 | book edition (1890, public domain); machine-readable text layer and inversion created by the SayFable project from the printed edition | kbd lemma/gloss/sentiment |
 | «Русско-удмуртский словарь» / Удмуртский НИИ истории, языка, литературы и фольклора; под ред. А. С. Бутолина. — Ижевск: Удгиз, 1942 | book edition (1942); machine-readable text layer and ru→udm inversion created by the SayFable project from the printed edition | udm gloss/sentiment enrichment |
 | Warriner, A.B., Kuperman, V. & Brysbaert, M. (2013) affective norms | research norms (free for research use) | valence scoring behind every `*-sent.txt` |
