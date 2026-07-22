@@ -16,7 +16,7 @@ that contributed to that pack.
 | [GrammarDB](https://github.com/Belarus/GrammarDB) (bnkorpus.info) | CC BY-SA 4.0 | be morphology (forms/paradigms) |
 | [Sloleks 3.0](http://hdl.handle.net/11356/1745) (CLARIN.SI) | CC BY-SA 4.0 | sl morphology (365k entries, full paradigms) |
 | [khakas.altaica.ru](http://khakas.altaica.ru) (Khakas dictionary + glossed parallel corpus) | research resource, used with attribution | kjh morph/gloss |
-| Curator's own Kabardian dictionaries (kabrudict/rukabdict; aheku.net name lists) | curator-provided | kbd lemma/names/gloss/sent |
+| «Русско-кабардинский словарь» / издание Управления Кавказского учебного округа; сост. Л. Лопатинский. — Тифлис, 1890 | book edition (1890, public domain); machine-readable text layer and inversion created by the SayFable project from the printed edition | kbd lemma/gloss/sentiment |
 | «Русско-удмуртский словарь» / Удмуртский НИИ истории, языка, литературы и фольклора; под ред. А. С. Бутолина. — Ижевск: Удгиз, 1942 | book edition (1942); machine-readable text layer and ru→udm inversion created by the SayFable project from the printed edition | udm gloss/sentiment enrichment |
 | Warriner, A.B., Kuperman, V. & Brysbaert, M. (2013) affective norms | research norms (free for research use) | valence scoring behind every `*-sent.txt` |
 
