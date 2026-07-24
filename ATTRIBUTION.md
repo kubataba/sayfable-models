@@ -1,4 +1,4 @@
-# Language pack attribution (release `lang-v1`)
+# Language pack attribution (releases `lang-v1`/`lang-v2`/`lang-v3`)
 
 Each `lang-<id>.zip` asset carries the analysis tables (morphology/lemma, proper-name
 gazetteer, gloss, sentiment valence) SayFable downloads on demand for one language.
@@ -9,7 +9,7 @@ that contributed to that pack.
 
 | Source | License | Used for |
 |---|---|---|
-| [Kaikki / Wiktextract](https://kaikki.org) (English Wiktionary extraction) | CC BY-SA | morph/names/gloss/sent of most languages (az, ba, be, bg, ca, cs, da, el, fi, hr, hu, hy, ka, kk, ky, lv, nl, no, pl, ro, ru, sk, sl (glosses), sv, tg, tr, tt, udm, uk, uz) |
+| [Kaikki / Wiktextract](https://kaikki.org) (English Wiktionary extraction) | CC BY-SA | morph/names/gloss/sent of most languages (az, ba, be, bg, ca, cs, da, de, el, es, fi, fr, hr, hu, hy, it, ka, kk, ky, lv, nl, no, pl, pt, ro, ru, sk, sl (glosses), sv, tg, tr, tt, udm, uk, uz) |
 | [Русский Викисловарь](https://ru.wiktionary.org) (ru.wiktionary dumps) | CC BY-SA | tt / ba / ky morph+gloss rebuilds (2026-07) |
 | [GiellaLT](https://github.com/giellalt) (`lang-myv`, `lang-mdf`, `lang-udm` lexicons) | **LGPL-3.0** | myv / mdf / udm morph, gloss, sentiment pivots |
 | [Apertium](https://github.com/apertium) (`apertium-sah`, `apertium-chv`, `apertium-tat`, `apertium-tgk` `.lexc` lexicons) | **GPL-3.0** | sah / chv morph+names; tt and tg enrichment |
