@@ -28,4 +28,6 @@ punctuation model (same Silero TE v2 weights, converted from TorchScript to ONNX
 
 - **Silero models** (TTS, AccentorEngine stress, TE punctuation) — MIT (© Silero Team)
 - **Piper Latvian voices** — CC0 1.0
+- **Piper English voices** (`piper-en-v1`) — public domain (cori, kristin, ljspeech); `en_US-sayfable` (`sayfable-tts-*`) — ours, see its `LICENCE.txt`
+- **English pronunciation** — CMUdict, BSD-2-Clause (Carnegie Mellon University); `en-names.dict`, ours; `en-g2p.bin` — g2p_en 2.1.0 by Kyubyong Park & Jongseok Kim, **Apache-2.0** (licence text in `en-g2p.LICENSE`, attribution in `ATTRIBUTION.md` of the release)
 - **Language-pack tables** — per-source licenses and citations in [ATTRIBUTION.md](ATTRIBUTION.md): Kaikki/Wiktextract CC BY-SA, Russian Wiktionary CC BY-SA, GiellaLT LGPL-3.0, Apertium GPL-3.0, GrammarDB CC BY-SA 4.0, Sloleks 3.0 CC BY-SA 4.0, and printed dictionary editions (1890/1942/2006)
